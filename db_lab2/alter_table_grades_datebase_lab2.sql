@@ -1,0 +1,13 @@
+ALTER TABLE IF EXISTS public."Grades"
+    ALTER COLUMN grade SET NOT NULL;
+ALTER TABLE IF EXISTS public."Grades"
+    ADD PRIMARY KEY (grade_id);
+
+ALTER TABLE IF EXISTS public."Grades"
+    ALTER COLUMN grade_id DROP DEFAULT;
+
+ALTER TABLE IF EXISTS public."Grades"
+    ALTER COLUMN description SET DEFAULT 'Примечения';
+    
+ALTER TABLE IF EXISTS public."Grades"
+    ALTER COLUMN grade_id ADD GENERATED ALWAYS AS IDENTITY;
